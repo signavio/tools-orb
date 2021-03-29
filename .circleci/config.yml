@@ -30,7 +30,7 @@ jobs:
       - run:
           command: |
             hadolint --version
-            golangci-lint version
+            golangci-lint --version
 
 workflows:
   test-pack:

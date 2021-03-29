@@ -8,8 +8,6 @@ setup() {
 @test "1: Test hadolint Install' {
     export BIN_PATH="/tmp/bin"
     export TOOL_VERSION="1.18.0"
-    Validate
-    result=$(Install)
-    echo $result
-    [[ "$result" =~ '1.18.0' ]]
+    run Install
+    [[ "$lines" =~ '1.18.0' ]]
 }

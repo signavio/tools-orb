@@ -8,7 +8,6 @@ setup() {
 @test "1: Test golangci Install' {
     export BIN_PATH="/tmp/bin"
     export TOOL_VERSION="1.27.0"
-    Validate
     run Install
     [[ "$lines" =~ '1.27.0' ]]
 }

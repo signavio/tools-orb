@@ -1,6 +1,6 @@
 setup() {
     # Load our script file.
-    source ./src/scripts/install-hadolint.sh
+    source ./src/scripts/validate.sh
 }
 
 @test '1: Test required argument BIN_PATH' {
