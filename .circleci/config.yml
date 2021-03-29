@@ -25,7 +25,7 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      - tools-orb/install-hadolint
+#      - tools-orb/install-hadolint
 
 workflows:
   test-pack:
