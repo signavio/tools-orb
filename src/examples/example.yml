@@ -4,7 +4,15 @@ usage:
   version: 2.1
   orbs:
     tools-orb: signavio/tools-orb@1.2.3
-  workflows:
-    use-my-orb:
-      jobs:
+  jobs:
+    install-tools:
+      docker:
+        - image: cimg/base:stable
+      steps:
+        - checkout
         - tools-orb/install-hadolint
+        - tools-orb/install-golangci
+  workflows:
+    test:
+      jobs:
+        - install-tools

@@ -26,6 +26,11 @@ jobs:
     steps:
       - checkout
       - tools-orb/install-hadolint
+      - tools-orb/install-golangci
+      - run:
+          command: |
+            hadolint --version
+            golangci-lint --version
 
 workflows:
   test-pack:

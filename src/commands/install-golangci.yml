@@ -1,10 +1,10 @@
 description: >
-  installing hadolint
+  installing golangci-lint
 parameters:
   version:
     type: string
-    default: "1.18.0"
-    description: "hadolint version"
+    default: "1.27.0"
+    description: "golangci-lint version"
   bin-path:
     type: string
     default: ""
@@ -14,5 +14,5 @@ steps:
       environment:
         BIN_PATH: <<parameters.bin-path>>
         TOOL_VERSION: <<parameters.version>>
-      name: Install hadolint-lint
-      command: <<include(scripts/install-hadolint.sh)>>
+      name: Install golangci-lint
+      command: <<include(scripts/install-golangci.sh)>>
