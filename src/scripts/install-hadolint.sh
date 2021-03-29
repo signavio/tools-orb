@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# shellcheck source="./src/scripts/common.sh"
+# shellcheck disable=SC1091
 source "./src/scripts/common.sh"
 
 Install() {
