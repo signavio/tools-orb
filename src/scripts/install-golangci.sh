@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# shellcheck disable=SC1091
-source "./src/scripts/common.sh"
-
 Install() {
   if ! [ -x "$(command -v golangci-lint)" ]; then
     curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh -o /tmp/install-golangci.sh
@@ -13,3 +10,6 @@ Install() {
     echo "hadolint already installed"
   fi
 }
+
+# shellcheck disable=SC1091
+source "./src/scripts/common.sh"
