@@ -1,0 +1,18 @@
+description: >
+  installing golangci-lint
+parameters:
+  version:
+    type: string
+    default: "1.27.0"
+    description: "golangci-lint version"
+  bin-path:
+    type: string
+    default: "~/bin"
+    description: "bin path where to install tool"
+steps:
+  - run:
+      environment:
+        BIN_PATH: <<parameters.bin-path>>
+        TOOL_VERSION: <<parameters.version>>
+      name: Install Golangci-lint
+      command: <<include(scripts/install-golangci.sh)>>
