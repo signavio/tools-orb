@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# shellcheck source=./src/scripts/common.sh
-source ./src/scripts/common.sh
+# shellcheck source="./src/scripts/common.sh"
+source "./src/scripts/common.sh"
 
 Install() {
   if ! [ -x "$(command -v hadolint)" ]; then
