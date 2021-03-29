@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# shellcheck source=./src/scripts/common.sh
 source ./src/scripts/common.sh
 
 Install() {
