@@ -4,22 +4,27 @@ Easily add and author [Reusable Commands](https://circleci.com/docs/2.0/reusing-
 
 Each _YAML_ file within this directory will be treated as an orb command, with a name which matches its filename.
 
-View the included _[greet.yml](./greet.yml)_ example.
+View the included _[install-hadolint.yml](./install-hadolint.yml)_ example.
 
 ```yaml
 description: >
-  Replace this text with a description for this command.
-  # What will this command do?
-  # Descriptions should be short, simple, and clear.
+  installing hadolint
 parameters:
-  greeting:
+  version:
     type: string
-    default: "Hello"
-    description: "Select a proper greeting"
+    default: "1.18.0"
+    description: "hadolint version"
+  bin-path:
+    type: string
+    default: "~/bin"
+    description: "bin path where to install tool"
 steps:
   - run:
-      name: Hello World
-      command: echo << parameters.greeting >> world
+      environment:
+        BIN_PATH: <<parameters.bin-path>>
+        TOOL_VERSION: <<parameters.version>>
+      name: Install Hadolint
+      command: <<include(scripts/install-hadolint.sh)>>
 ```
 
 ## See:
