@@ -1,0 +1,20 @@
+description: >
+  Sample description
+# What will this job do?
+# Descriptions should be short, simple, and clear.
+
+executor: default
+
+parameters:
+  version:
+    type: string
+    default: "1.18.0"
+    description: "hadolint version"
+  bin-path:
+    type: string
+    default: "~/bin"
+    description: "bin path where to install tool"
+steps:
+  - install-hadolint:
+      version: << parameters.version >>
+      bin-path: << parameters.bin-path >>
