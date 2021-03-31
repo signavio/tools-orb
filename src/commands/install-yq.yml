@@ -1,0 +1,18 @@
+description: >
+  installing yq
+parameters:
+  version:
+    type: string
+    default: "4.6.3"
+    description: "yq version"
+  bin-path:
+    type: string
+    default: ""
+    description: "bin path where to install tool. if not specified will use ${HOME}/.local/bin"
+steps:
+  - run:
+      environment:
+        BIN_PATH: <<parameters.bin-path>>
+        TOOL_VERSION: <<parameters.version>>
+      name: Install yq
+      command: <<include(scripts/install-yq.sh)>>

@@ -1,13 +1,14 @@
 BIN_PATH=${BIN_PATH:-"${HOME}/.local/bin"}
+TOOL_NAME="hadolint"
 
 Install() {
-  if ! [ -x "$(command -v hadolint)" ]; then
+  if ! [ -x "$(command -v ${TOOL_NAME})" ]; then
     mkdir -p "${BIN_PATH}"
-    curl -Ls "https://github.com/hadolint/hadolint/releases/download/v${TOOL_VERSION}/hadolint-$(uname -s)-x86_64" -o "${BIN_PATH}/hadolint"
-    chmod +x "${BIN_PATH}/hadolint"
-    "${BIN_PATH}/hadolint" --version
+    curl -Ls "https://github.com/${TOOL_NAME}/${TOOL_NAME}/releases/download/v${TOOL_VERSION}/${TOOL_NAME}-$(uname -s)-$(uname -m)" -o "${BIN_PATH}/${TOOL_NAME}"
+    chmod +x "${BIN_PATH}/${TOOL_NAME}"
+    "${BIN_PATH}/${TOOL_NAME}" --version
   else
-    echo "hadolint already installed"
+    echo "${TOOL_NAME} already installed"
   fi
 }
 
