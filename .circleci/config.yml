@@ -35,7 +35,7 @@ jobs:
             hadolint --version
             golangci-lint --version
             pre-commit --version
-            helm --version
+            helm version
 
 workflows:
   test-pack:
