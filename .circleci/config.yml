@@ -29,6 +29,7 @@ jobs:
       - tools-orb/install-golangci-lint
       - tools-orb/install-pre-commit
       - run:
+          name: list versions
           command: |
             hadolint --version
             golangci-lint --version
