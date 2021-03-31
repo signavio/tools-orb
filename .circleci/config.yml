@@ -39,7 +39,7 @@ jobs:
             pre-commit --version
             helm version
             yq --version
-            circleci --version
+            circleci version
 
 workflows:
   test-pack:
