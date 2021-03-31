@@ -5,6 +5,6 @@ description: >
 display:
   source_url: "https://www.github.com/signavio/tools-orb"
 
-# If your orb requires other orbs, you can import them like this. Otherwise remove the "orbs" stanza.
-# orbs:
-#  hello: circleci/hello-build@0.0.5
+# import dependencies
+orbs:
+  helm: circleci/helm@1.2.0
