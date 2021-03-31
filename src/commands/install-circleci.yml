@@ -1,0 +1,15 @@
+description: >
+  installing circleci-cli client
+parameters:
+  version:
+    type: string
+    default: "latest"
+    description: "circleci-cli version"
+  bin-path:
+    type: string
+    default: "/usr/local/bin"
+    description: "bin path where to install tool."
+steps:
+  - circleci-cli/install:
+      version: << parameters.version >>
+      install-dir: << parameters.bin-path>>

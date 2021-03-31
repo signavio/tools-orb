@@ -8,3 +8,4 @@ display:
 # import dependencies
 orbs:
   helm: circleci/helm@1.2.0
+  circleci-cli: circleci/circleci-cli@0.1.9

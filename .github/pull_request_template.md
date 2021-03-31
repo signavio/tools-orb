@@ -1,9 +1,3 @@
-
-**SEMVER Update Type:**
-- [ ] Major
-- [ ] Minor
-- [ ] Patch
-
 ## Description:
 
 <!---
@@ -31,3 +25,4 @@
 - [ ] All new jobs, commands, executors, parameters have descriptions.
 - [ ] If adding a tool, bat tests have been added
 - [ ] If adding a tool, integration tests have been added
+- [ ] PR title and Squash Merge Commit Header has to be prefixed with [semver:minor] or [semver:patch]
