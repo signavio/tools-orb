@@ -9,7 +9,7 @@ InstallPreCommit() {
   fi
   echo "installing ${INSTALL_SUFFIX}"
   if [ -x "$(command -v pip)" ]; then
-    pip install "${INSTALL_SUFFIX}"
+    sudo pip install "${INSTALL_SUFFIX}"
   else
     python3 -m pip install "${INSTALL_SUFFIX}"
   fi
