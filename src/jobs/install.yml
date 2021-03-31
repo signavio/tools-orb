@@ -7,3 +7,5 @@ steps:
   - install-hadolint
   - install-golangci-lint
   - install-pre-commit
+  - install-helm
+  - install-yq

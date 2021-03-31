@@ -12,6 +12,8 @@ usage:
         - checkout
         - tools-orb/install-hadolint
         - tools-orb/install-golangci-lint
+        - tools-orb/install-helm
+        - tools-orb/install-yq
   workflows:
     test:
       jobs:
