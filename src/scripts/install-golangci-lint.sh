@@ -8,7 +8,7 @@ Install() {
     /tmp/install-golangci.sh -b "${BIN_PATH}" "v${TOOL_VERSION}" >&2
     "${BIN_PATH}/golangci-lint" --version
   else
-    echo "golangci already installed"
+    echo "golangci-lint already installed"
   fi
 }
 

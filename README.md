@@ -9,7 +9,11 @@ A starter template for orb projects. Build, test, and publish orbs automatically
 Additional READMEs are available in each directory.
 
 
-
+## How to add a tool
+* add script to [src/scripts](src/scripts) (you can copy and paste from existing)
+* add bats test in [src/tests](src/tests) (you can copy and paste from existing)
+* add integration in job `integration-test-1` [.circleci/config.yml](.circleci/config.yml)
+* [run test locally](src/tests/README.md#test-bats-locally) 
 
 ## Resources
 

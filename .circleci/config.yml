@@ -26,11 +26,13 @@ jobs:
     steps:
       - checkout
       - tools-orb/install-hadolint
-      - tools-orb/install-golangci
+      - tools-orb/install-golangci-lint
+      - tools-orb/install-pre-commit
       - run:
           command: |
             hadolint --version
             golangci-lint --version
+            pre-commit --version
 
 workflows:
   test-pack:

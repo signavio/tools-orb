@@ -29,5 +29,5 @@
 -->
 
 - [ ] All new jobs, commands, executors, parameters have descriptions.
-- [ ] Usage Example version numbers have been updated.
-- [ ] Changelog has been updated.
+- [ ] If adding a tool, bat tests have been added
+- [ ] If adding a tool, integration tests have been added

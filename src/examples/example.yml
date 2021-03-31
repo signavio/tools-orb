@@ -11,7 +11,7 @@ usage:
       steps:
         - checkout
         - tools-orb/install-hadolint
-        - tools-orb/install-golangci
+        - tools-orb/install-golangci-lint
   workflows:
     test:
       jobs:

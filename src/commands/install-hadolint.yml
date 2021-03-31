@@ -14,5 +14,5 @@ steps:
       environment:
         BIN_PATH: <<parameters.bin-path>>
         TOOL_VERSION: <<parameters.version>>
-      name: Install hadolint-lint
+      name: Install hadolint
       command: <<include(scripts/install-hadolint.sh)>>
