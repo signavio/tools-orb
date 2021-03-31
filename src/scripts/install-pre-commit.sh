@@ -6,9 +6,9 @@ Install() {
   if ! [ -x "$(command -v ${TOOL_NAME})" ]; then
     if [ -x "$(command -v python3)" ]; then
       if [ -z "${TOOL_VERSION}" ]; then
-        python3 -m pip install ${TOOL_NAME}
+        python3 -m pip3 install ${TOOL_NAME}
       else
-        python3 -m pip install ${TOOL_NAME}==${TOOL_VERSION}
+        python3 -m pip3 install "${TOOL_NAME}==${TOOL_VERSION}"
       fi
     else
       echo "python3 not available"
