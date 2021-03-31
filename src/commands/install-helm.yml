@@ -1,10 +1,10 @@
 description: >
-  installing hadolint
+  installing helm client
 parameters:
   version:
     type: string
     default: "v3.5.3"
-    description: "hadolint version"
+    description: "helm version"
 steps:
   - helm/install-helm-client:
       version: << parameters.version >>
