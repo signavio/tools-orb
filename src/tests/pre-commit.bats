@@ -9,7 +9,6 @@ setup() {
 @test "3: Test ${TOOL_NAME} Install' {
     run Install
     echo $lines
-    [ $status = 0 ]
     run ${TOOL_NAME} --version
     echo $lines
     [ $status = 0 ]
