@@ -17,7 +17,7 @@
   Share any open issues this PR references or otherwise describe the motivation to submit this pull request.
  -->
 
- **Closes Issues:**
+**Closes Issues:**
 -  ISSUE URL
 
 ## Checklist:
