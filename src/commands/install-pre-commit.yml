@@ -1,0 +1,13 @@
+description: >
+  installing pre-commit
+parameters:
+  version:
+    type: string
+    default: ""
+    description: "pre-commit version. if empty installing latest version"
+steps:
+  - run:
+      environment:
+        TOOL_VERSION: <<parameters.version>>
+      name: Install pre-commit
+      command: <<include(scripts/install-pre-commit.sh)>>

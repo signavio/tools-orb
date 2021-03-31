@@ -15,4 +15,4 @@ steps:
         BIN_PATH: <<parameters.bin-path>>
         TOOL_VERSION: <<parameters.version>>
       name: Install golangci-lint
-      command: <<include(scripts/install-golangci.sh)>>
+      command: <<include(scripts/install-golangci-lint.sh)>>

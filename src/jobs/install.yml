@@ -5,4 +5,5 @@ executor: default
 
 steps:
   - install-hadolint
-  - install-golangci
+  - install-golangci-lint
+  - install-pre-commit
