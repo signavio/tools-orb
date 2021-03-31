@@ -8,17 +8,17 @@ InstallPreCommit() {
     INSTALL_SUFFIX="${TOOL_NAME}==${TOOL_VERSION}"
   fi
   echo "installing ${INSTALL_SUFFIX}"
-  if [ -x "$(command -v pip)" ]; then
-    sudo pip install "${INSTALL_SUFFIX}"
-  else
-    python3 -m pip install "${INSTALL_SUFFIX}"
+  if [ -n "${CIRCLECI}" ]; then
+    sudo apt-get update
+    sudo apt-get install python3-pip
   fi
+  python3 -m pip install "${INSTALL_SUFFIX}"
 }
 
 Install() {
   if ! [ -x "$(command -v ${TOOL_NAME})" ]; then
     if [ -x "$(command -v python3)" ]; then
-        InstallPreCommit
+      InstallPreCommit
     else
       echo "python3 not available"
       exit 1
@@ -30,5 +30,5 @@ Install() {
 
 ORB_TEST_ENV="bats-core"
 if [ "${0#*$ORB_TEST_ENV}" == "$0" ]; then
-    Install
+  Install
 fi
