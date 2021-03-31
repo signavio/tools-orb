@@ -28,6 +28,7 @@ jobs:
       - tools-orb/install-hadolint
       - tools-orb/install-golangci-lint
       - tools-orb/install-pre-commit
+      - tools-orb/install-helm
       - run:
           name: list versions
           command: |
