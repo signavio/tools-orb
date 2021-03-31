@@ -9,3 +9,4 @@ steps:
   - install-pre-commit
   - install-helm
   - install-yq
+  - install-circleci

@@ -2,9 +2,16 @@ version: 2.1
 
 description: >
   Orb with collection of install script for various tools
+  * hadolint
+  * pre-commit
+  * golangci-lint
+  * yq
+  * helm (referenced from existing official orb)
+  * circleci (referenced from existing official orb)
 display:
   source_url: "https://www.github.com/signavio/tools-orb"
 
 # import dependencies
 orbs:
   helm: circleci/helm@1.2.0
+  circleci-cli: circleci/circleci-cli@0.1.9

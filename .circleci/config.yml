@@ -29,6 +29,8 @@ jobs:
       - tools-orb/install-golangci-lint
       - tools-orb/install-pre-commit
       - tools-orb/install-helm
+      - tools-orb/install-yq
+      - tools-orb/install-circleci
       - run:
           name: list versions
           command: |
@@ -36,6 +38,8 @@ jobs:
             golangci-lint --version
             pre-commit --version
             helm version
+            yq --version
+            circleci version
 
 workflows:
   test-pack:
