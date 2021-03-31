@@ -1,5 +1,5 @@
 description: >
-  installing circleci-cli client
+  installing circleci-cli
 parameters:
   version:
     type: string
