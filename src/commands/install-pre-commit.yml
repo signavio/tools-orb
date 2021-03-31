@@ -8,7 +8,6 @@ parameters:
 steps:
   - run:
       environment:
-        BIN_PATH: <<parameters.bin-path>>
         TOOL_VERSION: <<parameters.version>>
       name: Install pre-commit
       command: <<include(scripts/install-pre-commit.sh)>>
