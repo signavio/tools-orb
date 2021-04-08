@@ -3,17 +3,19 @@ description: >
 usage:
   version: 2.1
   orbs:
-    tools-orb: signavio/tools-orb@1.2.3
+    tools: signavio/tools-orb@1.2.3
   jobs:
     install-tools:
       docker:
         - image: cimg/base:stable
       steps:
         - checkout
-        - tools-orb/install-hadolint
-        - tools-orb/install-golangci-lint
-        - tools-orb/install-helm
-        - tools-orb/install-yq
+        - tools/install-hadolint
+        - tools/install-golangci-lint
+        - tools/install-pre-commit
+        - tools/install-helm
+        - tools/install-yq
+        - tools/install-circleci
   workflows:
     test:
       jobs:
