@@ -16,6 +16,7 @@ usage:
         - tools/install-helm
         - tools/install-yq
         - tools/install-circleci
+        - tools/install-github
   workflows:
     test:
       jobs:

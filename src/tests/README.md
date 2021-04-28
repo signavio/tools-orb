@@ -8,7 +8,7 @@ This is where your testing scripts for whichever language is embeded in your orb
 docker build -t bats .
 docker run -it -v "${PWD}:/code" bats src/tests
 # or run specific test
-docker run -it -v "${PWD}:/code" bats src/tests/install-hadolint.sh
+docker run -it -v "${PWD}:/code" bats src/tests/hadolint.sh
 ```
 
 # Testing Orbs

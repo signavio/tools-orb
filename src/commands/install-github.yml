@@ -1,0 +1,18 @@
+description: >
+  installing github cli
+parameters:
+  version:
+    type: string
+    default: "1.9.2"
+    description: "github cli version"
+  bin-path:
+    type: string
+    default: ""
+    description: "bin path where to install tool. if not specified will use ${HOME}/.local/bin"
+steps:
+  - run:
+      environment:
+        BIN_PATH: <<parameters.bin-path>>
+        TOOL_VERSION: <<parameters.version>>
+      name: Install github cli
+      command: <<include(scripts/install-github.sh)>>
