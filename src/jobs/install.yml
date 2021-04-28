@@ -10,3 +10,4 @@ steps:
   - install-helm
   - install-yq
   - install-circleci
+  - install-github
