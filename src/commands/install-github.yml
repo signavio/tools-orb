@@ -15,4 +15,4 @@ steps:
         BIN_PATH: <<parameters.bin-path>>
         TOOL_VERSION: <<parameters.version>>
       name: Install github cli
-      command: <<include(scripts/install-hadolint.sh)>>
+      command: <<include(scripts/install-github.sh)>>
