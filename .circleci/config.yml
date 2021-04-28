@@ -31,6 +31,7 @@ jobs:
       - tools-orb/install-helm
       - tools-orb/install-yq
       - tools-orb/install-circleci
+      - tools-orb/install-github
       - run:
           name: list versions
           command: |
@@ -40,6 +41,7 @@ jobs:
             helm version
             yq --version
             circleci version
+            gh --version
 
 workflows:
   test-pack:
