@@ -30,7 +30,6 @@ jobs:
       - tools-orb/install-golangci-lint
       - tools-orb/install-pre-commit
       - tools-orb/install-helm
-      - tools-orb/install-yq
       - tools-orb/install-circleci
       - tools-orb/install-github
       - run:
@@ -41,7 +40,6 @@ jobs:
             golangci-lint --version
             pre-commit --version
             helm version
-            yq --version
             circleci version
             gh --version
 

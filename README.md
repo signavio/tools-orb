@@ -16,7 +16,6 @@ Additional READMEs are available in each directory.
 | golangci-lint | 1.27.0          | no           |
 | helm          | v3.5.3          | yes          |
 | pre-commit    | latest          | no           |
-| yq            | 4.6.3           | no           |
 | circleci      | latest          | yes          |
 
 ## How to add a tool

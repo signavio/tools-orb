@@ -9,6 +9,5 @@ steps:
   - install-golangci-lint
   - install-pre-commit
   - install-helm
-  - install-yq
   - install-circleci
   - install-github

@@ -3,7 +3,7 @@ description: >
 parameters:
   version:
     type: string
-    default: "4.6.3"
+    default: "4.13.3"
     description: "yq version"
   bin-path:
     type: string
