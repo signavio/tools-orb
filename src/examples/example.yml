@@ -14,6 +14,7 @@ usage:
         - tools/install-golangci-lint
         - tools/install-pre-commit
         - tools/install-helm
+        - tools/install-faq
         - tools/install-yq
         - tools/install-circleci
         - tools/install-github

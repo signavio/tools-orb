@@ -25,6 +25,7 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
+      - tools-orb/install-faq
       - tools-orb/install-hadolint
       - tools-orb/install-golangci-lint
       - tools-orb/install-pre-commit
@@ -35,6 +36,7 @@ jobs:
       - run:
           name: list versions
           command: |
+            faq --version
             hadolint --version
             golangci-lint --version
             pre-commit --version

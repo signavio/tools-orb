@@ -11,6 +11,7 @@ Additional READMEs are available in each directory.
 ## Supported Tools
 | Tool Name     | Default Version | External Orb |
 |---------------|-----------------|--------------|
+| faq           | 0.0.7           | no           |
 | hadolint      | 1.18.0          | no           |
 | golangci-lint | 1.27.0          | no           |
 | helm          | v3.5.3          | yes          |
