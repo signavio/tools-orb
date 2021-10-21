@@ -2,6 +2,7 @@ version: 2.1
 
 description: >
   Orb with collection of install script for various tools
+  * faq
   * hadolint
   * pre-commit
   * golangci-lint

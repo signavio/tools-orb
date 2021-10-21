@@ -25,21 +25,21 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
+      - tools-orb/install-faq
       - tools-orb/install-hadolint
       - tools-orb/install-golangci-lint
       - tools-orb/install-pre-commit
       - tools-orb/install-helm
-      - tools-orb/install-yq
       - tools-orb/install-circleci
       - tools-orb/install-github
       - run:
           name: list versions
           command: |
+            faq --version
             hadolint --version
             golangci-lint --version
             pre-commit --version
             helm version
-            yq --version
             circleci version
             gh --version
 

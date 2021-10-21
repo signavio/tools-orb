@@ -11,11 +11,11 @@ Additional READMEs are available in each directory.
 ## Supported Tools
 | Tool Name     | Default Version | External Orb |
 |---------------|-----------------|--------------|
+| faq           | 0.0.7           | no           |
 | hadolint      | 1.18.0          | no           |
 | golangci-lint | 1.27.0          | no           |
 | helm          | v3.5.3          | yes          |
 | pre-commit    | latest          | no           |
-| yq            | 4.6.3           | no           |
 | circleci      | latest          | yes          |
 
 ## How to add a tool
@@ -53,3 +53,8 @@ Example: `[semver:major]`
 
 For further questions/comments about this or other orbs, visit the Orb Category of [CircleCI Discuss](https://discuss.circleci.com/c/orbs).
 
+### Developing
+When the pipeline fails with a build error that states it is missing a proper `dev:alpha` version of the Orb, first, create a proper Orb release from your local machine by doing
+
+    circleci orb pack src > orb.yml && circleci orb validate orb.yml
+    circleci orb publish orb.yml signavio/tools-orb@dev:alpha

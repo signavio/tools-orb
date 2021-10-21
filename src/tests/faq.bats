@@ -1,5 +1,5 @@
-TOOL_NAME="yq"
-TOOL_VERSION="4.13.3"
+TOOL_NAME="faq"
+TOOL_VERSION="0.0.7"
 BIN_PATH="/tmp/bin"
 
 setup() {
@@ -7,7 +7,6 @@ setup() {
 }
 
 @test "2: Test ${TOOL_NAME} Install' {
-    skip "yq is already provided in the surrounding machine"
     run Install
     echo $lines
     [[ "$lines" =~ "${TOOL_VERSION}" ]]
