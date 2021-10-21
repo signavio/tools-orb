@@ -4,11 +4,11 @@ description: >
 executor: default
 
 steps:
+  - install-faq
   - install-hadolint
   - install-golangci-lint
   - install-pre-commit
   - install-helm
-  - install-faq
   - install-yq
   - install-circleci
   - install-github

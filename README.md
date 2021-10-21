@@ -54,3 +54,8 @@ Example: `[semver:major]`
 
 For further questions/comments about this or other orbs, visit the Orb Category of [CircleCI Discuss](https://discuss.circleci.com/c/orbs).
 
+### Developing
+When the pipeline fails with a build error that states it is missing a proper `dev:alpha` version of the Orb, first, create a proper Orb release from your local machine by doing
+
+    circleci orb pack src > orb.yml && circleci orb validate orb.yml
+    circleci orb publish orb.yml signavio/tools-orb@dev:alpha
