@@ -32,6 +32,7 @@ jobs:
       - tools-orb/install-helm
       - tools-orb/install-circleci
       - tools-orb/install-github
+      - tools-orb/install-yamllint
       - run:
           name: list versions
           command: |
@@ -42,6 +43,7 @@ jobs:
             helm version
             circleci version
             gh --version
+            yamllint --version
 
 workflows:
   test-pack:
