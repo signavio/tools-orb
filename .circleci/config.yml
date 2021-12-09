@@ -32,6 +32,8 @@ jobs:
       - tools-orb/install-helm
       - tools-orb/install-circleci
       - tools-orb/install-github
+      - tools-orb/install-yamllint
+      - tool
       - run:
           name: list versions
           command: |
