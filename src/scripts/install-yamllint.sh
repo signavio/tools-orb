@@ -18,7 +18,7 @@ InstallYamlLint() {
 Install() {
   if ! [ -x "$(command -v ${TOOL_NAME})" ]; then
     if [ -x "$(command -v python3)" ]; then
-      InstallPreCommit
+      InstallYamlLint
     else
       echo "python3 not available"
       exit 1
