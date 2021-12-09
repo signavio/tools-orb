@@ -43,6 +43,7 @@ jobs:
             helm version
             circleci version
             gh --version
+            yamllint --version
 
 workflows:
   test-pack:
