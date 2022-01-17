@@ -1,0 +1,25 @@
+description: >
+  example workflow to ignore changes on a specific directory
+usage:
+  version: 2.1
+  orbs:
+    tools: signavio/tools-orb@1.2.3
+  jobs:
+    check-changes:
+      docker:
+        - image: cimg/base:edge
+      steps:
+        - checkout
+        - tools/check-changes:
+            directory: ".circleci"
+        - run:
+            name: list-changes
+            command: |
+              source $BASH_ENV
+              echo "found changed files of .circleci directory $CHANGES_DETECTED"
+  workflows:
+    test:
+      jobs:
+        - check-changes:
+            # context containing github token
+            context: "some_context"

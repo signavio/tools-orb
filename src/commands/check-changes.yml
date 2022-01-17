@@ -11,7 +11,7 @@ parameters:
     description: "github-cli version"
   bin-path:
     type: string
-    default: "/usr/local/bin"
+    default: ""
     description: "bin path where to install tool."
   directory:
     type: string
@@ -20,9 +20,9 @@ parameters:
       Directory or changed fiels you want to report on. It can be a regex
       Valid Examples are "directoryA" "directoryA|directory" "dir.*A" 
 steps:
-  - install-circleci:
+  - install-github:
       version: << parameters.version >>
-      install-dir: << parameters.bin-path>>
+      bin-path: << parameters.bin-path>>
   - run:
       name: detect changes
       environment:
