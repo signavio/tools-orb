@@ -1,8 +1,8 @@
 description: >
   Check for git changes in specific directory for github CLI.
-  You need GITHUB_TOKEN env variable available. 
+  You need GITHUB_TOKEN env variable available.
   If there are changed files detected within the directory regex,
-  it will add a env var called CHANGES_DETECTED=true otherwise false or not added at all. 
+  it will add a env var called CHANGES_DETECTED=true otherwise false or not added at all.
 
 parameters:
   version:
@@ -18,7 +18,7 @@ parameters:
     default: ""
     description: |
       Directory or changed fiels you want to report on. It can be a regex
-      Valid Examples are "directoryA" "directoryA|directory" "dir.*A" 
+      Valid Examples are "directoryA" "directoryA|directory" "dir.*A"
 steps:
   - install-github:
       version: << parameters.version >>
