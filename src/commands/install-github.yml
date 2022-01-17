@@ -3,7 +3,7 @@ description: >
 parameters:
   version:
     type: string
-    default: "1.9.2"
+    default: "2.4.0"
     description: "github cli version"
   bin-path:
     type: string

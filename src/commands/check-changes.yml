@@ -1,0 +1,30 @@
+description: >
+  Check for git changes in specific directory for github CLI.
+  You need GITHUB_TOKEN env variable available. 
+  If there are changed files detected within the directory regex,
+  it will add a env var called CHANGES_DETECTED=true otherwise false or not added at all. 
+
+parameters:
+  version:
+    type: string
+    default: "2.4.0"
+    description: "github-cli version"
+  bin-path:
+    type: string
+    default: "/usr/local/bin"
+    description: "bin path where to install tool."
+  directory:
+    type: string
+    default: ""
+    description: |
+      Directory or changed fiels you want to report on. It can be a regex
+      Valid Examples are "directoryA" "directoryA|directory" "dir.*A" 
+steps:
+  - install-circleci:
+      version: << parameters.version >>
+      install-dir: << parameters.bin-path>>
+  - run:
+      name: detect changes
+      environment:
+        DIRECTORY: << parameters.directory >>
+      command: <<include(scripts/check-changes.sh)>>
