@@ -5,6 +5,15 @@ parameters:
     type: string
     default: "v3.5.3"
     description: "helm version"
+  ssm-plugin-version:
+    type: string
+    default: "3.1.9"
+    description: "helm ssm version"
+
 steps:
   - helm/install-helm-client:
       version: << parameters.version >>
+  - run:
+    name: helm ssm
+    command: |
+      helm plugin install --version <<parameters.ssm-plugin-version>>  https://github.com/codacy/helm-ssm
