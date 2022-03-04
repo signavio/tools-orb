@@ -1,6 +1,6 @@
-DEFAULT_HELM_PLUGIN_DIR: "/home/argocd/.local/share/helm/plugins"
-HELM_SECRETS_VERSION= "v3.10.0"
-TOOL_VERSION= "3.1.9"
+DEFAULT_HELM_PLUGIN_DIR="/home/argocd/.local/share/helm/plugins"
+HELM_SECRETS_VERSION="v3.10.0"
+TOOL_VERSION="3.1.9"
 TOOL_NAME="helm ssm"
 
 Install() {
