@@ -14,6 +14,8 @@ steps:
   - helm/install-helm-client:
       version: << parameters.version >>
   - run:
+    environment:
+      TOOL_VERSION: <<parameters.ssm-plugin-version>>
     name: helm ssm
     command: |
-      helm plugin install --version <<parameters.ssm-plugin-version>>  https://github.com/codacy/helm-ssm
+      helm plugin install --version ${TOOL_VERSION}  https://github.com/codacy/helm-ssm
