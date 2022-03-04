@@ -5,6 +5,11 @@ parameters:
     type: string
     default: "v3.5.3"
     description: "helm version"
+  install-ssm-plugin:
+    type: boolean
+    default: false
+    description: >
+      enable helm plugin for ssm
   ssm-plugin-version:
     type: string
     default: "3.1.9"
@@ -13,9 +18,18 @@ parameters:
 steps:
   - helm/install-helm-client:
       version: << parameters.version >>
-  - run:
-      environment:
-        TOOL_VERSION: <<parameters.ssm-plugin-version>>
-      name: helm ssm
-      command: |
-        helm plugin install --version ${TOOL_VERSION}  https://github.com/codacy/helm-ssm
+  - when:
+      condition:
+        and:
+          - equal: [ true, << parameters.install-ssm-plugin >> ]
+      steps:
+        - run:
+            environment:
+              TOOL_VERSION: <<parameters.ssm-plugin-version>>
+              HELM_SECRETS_VERSION: "v3.10.0"
+              DEFAULT_HELM_PLUGIN_DIR: "/home/argocd/.local/share/helm/plugins"
+            name: helm ssm
+            command: |
+              helm plugin install https://github.com/jkroepke/helm-secrets --version ${HELM_SECRETS_VERSION} \
+              && mkdir "$DEFAULT_HELM_PLUGIN_DIR/helm-ssm" \
+              && curl -sL "https://github.com/codacy/helm-ssm/releases/download/${HELM_SSM_VERSION}/helm-ssm-linux.tgz" | tar xz -C "$DEFAULT_HELM_PLUGIN_DIR/helm-ssm"
