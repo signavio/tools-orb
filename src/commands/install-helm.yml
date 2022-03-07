@@ -28,5 +28,8 @@ steps:
               TOOL_VERSION: <<parameters.ssm-plugin-version>>
               HELM_SECRETS_VERSION: "v3.10.0"
               DEFAULT_HELM_PLUGIN_DIR: "/home/argocd/.local/share/helm/plugins"
-            name: install helm ssm
-            command: <<include(scripts/install-helm-ssm.sh)>>
+            name: helm ssm
+            command: |
+              helm plugin install https://github.com/jkroepke/helm-secrets --version ${HELM_SECRETS_VERSION} \
+              && mkdir "$DEFAULT_HELM_PLUGIN_DIR/helm-ssm" \
+              && curl -sL "https://github.com/codacy/helm-ssm/releases/download/${HELM_SSM_VERSION}/helm-ssm-linux.tgz" | tar xz -C "$DEFAULT_HELM_PLUGIN_DIR/helm-ssm"
