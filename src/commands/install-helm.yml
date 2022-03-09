@@ -5,30 +5,6 @@ parameters:
     type: string
     default: "v3.5.3"
     description: "helm version"
-  install-ssm-plugin:
-    type: boolean
-    default: false
-    description: >
-      enable helm plugin for ssm
-  ssm-plugin-version:
-    type: string
-    default: "3.1.9"
-    description: "helm ssm version"
-
 steps:
   - helm/install-helm-client:
       version: << parameters.version >>
-  - when:
-      condition:
-        and:
-          - equal: [ true, << parameters.install-ssm-plugin >> ]
-      steps:
-        - run:
-            environment:
-              HELM_SSM_VERSION: <<parameters.ssm-plugin-version>>
-              DEFAULT_HELM_PLUGIN_DIR: "/home/circleci/.local/share/helm/plugins"
-            name: helm ssm
-            command: |
-              mkdir -p "$DEFAULT_HELM_PLUGIN_DIR/helm-ssm" \
-              && curl -sL "https://github.com/codacy/helm-ssm/releases/download/${HELM_SSM_VERSION}/helm-ssm-linux.tgz" | tar xz -C "$DEFAULT_HELM_PLUGIN_DIR/helm-ssm"
-              helm ssm --help
