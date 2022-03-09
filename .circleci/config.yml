@@ -29,9 +29,7 @@ jobs:
       - tools-orb/install-hadolint
       - tools-orb/install-golangci-lint
       - tools-orb/install-pre-commit
-      - tools-orb/install-helm:
-          install-ssm-plugin: true
-          ssm-plugin-version: "3.1.9"
+      - tools-orb/install-helm
       - tools-orb/install-circleci
       - tools-orb/install-github
       - tools-orb/install-yamllint
@@ -46,7 +44,6 @@ jobs:
             circleci version
             gh --version
             yamllint --version
-            helm ssm --help
 
 workflows:
   test-pack:
