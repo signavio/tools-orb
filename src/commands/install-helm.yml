@@ -31,3 +31,5 @@ steps:
             command: |
               mkdir "$DEFAULT_HELM_PLUGIN_DIR/helm-ssm" \
               && curl -sL "https://github.com/codacy/helm-ssm/releases/download/${HELM_SSM_VERSION}/helm-ssm-linux.tgz" | tar xz -C "$DEFAULT_HELM_PLUGIN_DIR/helm-ssm"
+              && rm -rf helm-ssm-linux.tgz
+              helm ssm --help
