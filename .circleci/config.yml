@@ -46,7 +46,7 @@ jobs:
             circleci version
             gh --version
             yamllint --version
-            helm ssm --version
+            helm ssm --help
 
 workflows:
   test-pack:
