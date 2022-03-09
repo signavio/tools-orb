@@ -26,10 +26,9 @@ steps:
         - run:
             environment:
               HELM_SSM_VERSION: <<parameters.ssm-plugin-version>>
-              DEFAULT_HELM_PLUGIN_DIR: "~/.helm/plugins"
+              DEFAULT_HELM_PLUGIN_DIR: "/home/circleci/.local/share/helm/plugins"
             name: helm ssm
             command: |
               mkdir -p "$DEFAULT_HELM_PLUGIN_DIR/helm-ssm" \
-              && curl -sL "https://github.com/codacy/helm-ssm/releases/download/${HELM_SSM_VERSION}/helm-ssm-linux.tgz" | tar xz -C "$DEFAULT_HELM_PLUGIN_DIR/helm-ssm" \
-              && rm -rf helm-ssm-linux.tgz
+              && curl -sL "https://github.com/codacy/helm-ssm/releases/download/${HELM_SSM_VERSION}/helm-ssm-linux.tgz" | tar xz -C "$DEFAULT_HELM_PLUGIN_DIR/helm-ssm"
               helm ssm --help
