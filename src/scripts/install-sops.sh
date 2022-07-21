@@ -7,8 +7,8 @@ Install() {
     if [ "${TOOL_VERSION}" = "latest" ]; then
       TOOL_VERSION="$(curl -s https://api.github.com/repos/mozilla/sops/releases/latest | grep -Po '"tag_name": "\K.*?(?=")')"
     fi
-    SOPS_BINARY="sops-v${TOOL_VERSION}.linux.amd64"
-    curl -sL "https://github.com/cli/cli/releases/download/v${TOOL_VERSION}/${SOPS_BINARY}" -o "${BIN_PATH}/sops"
+    SOPS_BINARY="sops-${TOOL_VERSION}.linux.amd64"
+    curl -sL "https://github.com/mozilla/sops/releases/download/${TOOL_VERSION}/${SOPS_BINARY}" -o "${BIN_PATH}/${TOOL_NAME}"
     chmod +x "${BIN_PATH}/sops"
     "${BIN_PATH}/${TOOL_NAME}" --version
   else

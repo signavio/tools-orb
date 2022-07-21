@@ -4,7 +4,7 @@ parameters:
   version:
     type: string
     default: "latest"
-    description: "sops version e.g. 3.7.3 (default latest)"
+    description: "sops version e.g. v3.7.3 (default latest)"
   bin-path:
     type: string
     default: ""

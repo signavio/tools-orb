@@ -1,5 +1,5 @@
 TOOL_NAME="sops"
-TOOL_VERSION="3.7.3"
+TOOL_VERSION="v3.7.3"
 BIN_PATH="/tmp/bin"
 
 setup() {
