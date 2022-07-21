@@ -1,6 +1,8 @@
 # Orb Project Template
 
-[![CircleCI Build Status](https://circleci.com/gh/signavio/tools-orb.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/signavio/tools-orb) [![CircleCI Orb Version](https://badges.circleci.com/orbs/signavio/tools-orb)](https://circleci.com/orbs/registry/orb/signavio/tools-orb) [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/signavio/tools-orb/master/LICENSE) [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/signavio/tools-orb/tree/main.svg?style=shield&circle-token=74f6833376d1174bdd232d5b4eb8417108842f00)](https://dl.circleci.com/status-badge/redirect/gh/signavio/tools-orb/tree/main)
+![Orb Version Badge](https://badges.circleci.com/orbs/signavio/tools-orb.svg)
+[![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/signavio/tools-orb/master/LICENSE) [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
 
 
 
@@ -16,7 +18,10 @@ Additional READMEs are available in each directory.
 | golangci-lint | 1.27.0          | no           |
 | helm          | v3.5.3          | yes          |
 | pre-commit    | latest          | no           |
+| yq            | 4.13.3          | no           |
+| yamllint      | latest          | no           |
 | circleci      | latest          | yes          |
+| sops          | latest          | no           |
 
 ## How to add a tool
 * add script to [src/scripts](src/scripts) (you can copy and paste from existing)

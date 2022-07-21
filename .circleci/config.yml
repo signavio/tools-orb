@@ -35,6 +35,7 @@ jobs:
       - tools-orb/install-circleci
       - tools-orb/install-github
       - tools-orb/install-yamllint
+      - tools-orb/install-sops
       - run:
           name: list versions
           command: |
@@ -47,6 +48,7 @@ jobs:
             gh --version
             yamllint --version
             helm ssm --help
+            sops --version
 
 workflows:
   test-pack:

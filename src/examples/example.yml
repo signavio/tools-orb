@@ -16,7 +16,7 @@ usage:
         - tools/install-helm
         - tools/install-faq
         - tools/install-circleci
-        - tools/install-github
+        - tools/install-sops
   workflows:
     test:
       jobs:
