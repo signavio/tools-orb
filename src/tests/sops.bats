@@ -9,7 +9,7 @@ setup() {
 @test "2: Test ${TOOL_NAME} Install' {
     run Install
     echo $lines
-    [[ "$lines" =~ "${TOOL_VERSION}" ]]
+    [[ "$lines" =~ "${TOOL_VERSION//v}" ]]
     run ${BIN_PATH}/${TOOL_NAME} --version
     echo $lines
     [ $status = 0 ]
