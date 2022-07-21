@@ -12,3 +12,4 @@ steps:
   - install-circleci
   - install-github
   - install-yamllint
+  - install-sops
