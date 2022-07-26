@@ -5,7 +5,7 @@ Install() {
   if ! [ -x "$(command -v ${TOOL_NAME})" ]; then
     mkdir -p "${BIN_PATH}"
     if [ "${TOOL_VERSION}" = "latest" ]; then
-      TOOL_VERSION=$(curl --silent "https://api.github.com/repos/aquasecurity/trivy/releases/latest" | jq -r .tag_name | tail -c +2)
+      TOOL_VERSION=$(curl -s "https://api.github.com/repos/aquasecurity/trivy/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
     fi
 
     ARCH=$(uname -m)
