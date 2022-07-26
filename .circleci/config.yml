@@ -36,6 +36,7 @@ jobs:
       - tools-orb/install-github
       - tools-orb/install-yamllint
       - tools-orb/install-sops
+      - tools-orb/install-trivy
       - run:
           name: list versions
           command: |
@@ -49,6 +50,7 @@ jobs:
             yamllint --version
             helm ssm --help
             sops --version
+            trivy --version
 
 workflows:
   test-pack:
