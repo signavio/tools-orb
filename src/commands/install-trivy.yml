@@ -1,0 +1,19 @@
+description: >
+  installing trivy
+parameters:
+  version:
+    type: string
+    default: "latest"
+    description: "trivy version e.g. 0.30.3 (default latest)"
+  bin-path:
+    type: string
+    default: ""
+    description: "bin path where to install tool. if not specified will use ${HOME}/.local/bin"
+steps:
+  - run:
+      environment:
+        BIN_PATH: <<parameters.bin-path>>
+        TOOL_VERSION: <<parameters.version>>
+      name: Install trivy
+      command: <<include(scripts/install-trivy.sh)>>
+

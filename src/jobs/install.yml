@@ -13,3 +13,4 @@ steps:
   - install-github
   - install-yamllint
   - install-sops
+  - install-trivy
