@@ -5,7 +5,7 @@ Install() {
   if ! [ -x "$(command -v ${TOOL_NAME})" ]; then
     mkdir -p "${BIN_PATH}"
     if [ "${TOOL_VERSION}" = "latest" ]; then
-      TOOL_VERSION=$(curl -s https://api.github.com/repos/mozilla/sops/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+      TOOL_VERSION=$(curl -s https://api.github.com/repos/mozilla/sops/releases/latest | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
     fi
     SOPS_BINARY="sops-${TOOL_VERSION}.linux.amd64"
     curl -sL "https://github.com/mozilla/sops/releases/download/${TOOL_VERSION}/${SOPS_BINARY}" -o "${BIN_PATH}/${TOOL_NAME}"
