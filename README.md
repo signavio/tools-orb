@@ -22,6 +22,7 @@ Additional READMEs are available in each directory.
 | yamllint      | latest          | no           |
 | circleci      | latest          | yes          |
 | sops          | latest          | no           |
+| trivy         | latest          | no           |
 
 ## How to add a tool
 * add script to [src/scripts](src/scripts) (you can copy and paste from existing)

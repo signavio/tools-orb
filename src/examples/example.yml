@@ -17,6 +17,7 @@ usage:
         - tools/install-faq
         - tools/install-circleci
         - tools/install-sops
+        - tools/install-trivy
   workflows:
     test:
       jobs:
