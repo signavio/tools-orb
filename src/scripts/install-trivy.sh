@@ -8,7 +8,7 @@ Install() {
       TOOL_VERSION=$(curl --silent "https://api.github.com/repos/aquasecurity/trivy/releases/latest" | jq -r .tag_name | tail -c +2)
     fi
 
-    ARCH=$(uname -s)
+    ARCH=$(uname -m)
     case "$ARCH" in
     "x86_64")
       ARCH="64bit"
@@ -26,9 +26,10 @@ Install() {
       ;;
     esac
 
-    TRIVY_BINARY="trivy_${TOOL_VERSION}_${ARCH}.tar.gz"
-    curl -sL "https://github.com/mozilla/sops/releases/download/${TOOL_VERSION}/${TRIVY_BINARY}.tar.gz" -o "/tmp/${TOOL_NAME}.tar.gz"
-    tar xzf "/tmp/${TRIVY_BINARY}.tar.gz" -C /tmp
+    TRIVY_BINARY="trivy_${TOOL_VERSION}_$(uname -s)-${ARCH}"
+    echo "curl -sL https://github.com/aquasecurity/trivy/releases/download/v${TOOL_VERSION}/${TRIVY_BINARY}.tar.gz -o /tmp/${TOOL_NAME}.tar.gz"
+    curl -sL "https://github.com//aquasecurity/trivy/releases/download/v${TOOL_VERSION}/${TRIVY_BINARY}.tar.gz" -o "/tmp/${TOOL_NAME}.tar.gz"
+    tar xzf "/tmp/${TOOL_NAME}.tar.gz" -C /tmp
     mv "/tmp/${TOOL_NAME}" "${BIN_PATH}/${TOOL_NAME}"
     "${BIN_PATH}/${TOOL_NAME}" --version
   else

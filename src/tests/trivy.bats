@@ -1,5 +1,5 @@
-TOOL_NAME="sops"
-TOOL_VERSION="v3.7.3"
+TOOL_NAME="trivy"
+TOOL_VERSION="0.30.3"
 BIN_PATH="/tmp/bin"
 
 setup() {
