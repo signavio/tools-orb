@@ -4,7 +4,7 @@ parameters:
   version:
     type: string
     default: "latest"
-    description: "sops version e.g. v3.7.3 (default latest)"
+    description: "sops version e.g. v3.7.3 (default is latest)"
   bin-path:
     type: string
     default: ""
@@ -16,4 +16,3 @@ steps:
         TOOL_VERSION: <<parameters.version>>
       name: Install sops
       command: <<include(scripts/install-sops.sh)>>
-
